@@ -18,15 +18,15 @@ Este projeto foi desenvolvido como parte da disciplina **Desenvolvimento Web**, 
 
 ## Funcionalidades Principais
 
-### Autenticação
+### Autenticação e Segurança
 - Login e cadastro de usuários com senhas criptografadas  
-- Controle de sessão (usuário logado)
+- Controle de sessão (express-session) para manter o usuário logado e proteger rotas
 
 ### CRUD Completo
 - **Cadastro:** espaços, usuários, reservas  
 - **Consulta:** listagem de espaços e reservas com uso de `JOIN` entre tabelas  
 - **Edição:** atualização de informações e alteração de espaços reservados  
-- **Exclusão:** exclusão de registros com integridade referencial (exclusão em cascata)
+- **Exclusão:** Exclusão de registros com Integridade Referencial (ON DELETE RESTRICT e ON DELETE CASCADE)
 
 ### Frontend Responsivo
 - Layout limpo e intuitivo com HTML, CSS e React  
@@ -44,23 +44,37 @@ Este projeto foi desenvolvido como parte da disciplina **Desenvolvimento Web**, 
 
 | Camada | Tecnologia |
 |--------|-------------|
-| **Frontend** | React, HTML5, CSS3, JavaScript |
+| **Frontend** | React, HTML5, CSS3, JavaScript (Vite/Tailwind CSS)|
 | **Backend** | Node.js, Express.js |
 | **Banco de Dados** | MySQL |
 | **Autenticação** | express-session, bcrypt |
-| **Controle de Versão** | Git + GitHub |
+| **Controle de Versão** | GitHub |
 
 ---
 
-## Estrutura de Pastas (Inicial)
+# Instruções de Instalação e Execução
+
+
+---
+
+## Estrutura de Pastas
 
 ```
 sistema-reservas/
-├── index.html 
-├── style.css 
-├── assets/ 
-│ ├── img/ 
-│ └── icons/
-└── README.md 
+├── /backend                      # Servidor Node.js/Express
+│   ├── /database
+│   │   └── schema.sql
+│   ├── /src
+│   │   ├── /controllers          # Lógica de Negócios (CRUD)
+│   │   ├── /models               # Acesso ao MySQL (JOINs, bcrypt)
+│   │   └── /routes               # Rotas RESTful
+│   ├── .env
+│   └── package.json
+│
+└── /frontend                     # Aplicação React
+    ├── /src
+    │   ├── /components           # Navbar, Layout
+    │   └── /pages                # Views (Login, ReservasPage, EspacosPage)
+    └── package.json
 ```
 
