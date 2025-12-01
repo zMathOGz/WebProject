@@ -54,6 +54,65 @@ Este projeto foi desenvolvido como parte da disciplina **Desenvolvimento Web**, 
 
 # Instruções de Instalação e Execução
 
+Para rodar o Sistema de Reservas para Espaços e Eventos, é necessário configurar o Backend (Node.js) e o Banco de Dados (MySQL) e, em seguida, iniciar as aplicações Frontend e Backend simultaneamente.
+
+# 1. Pré-requisitos e Clonagem
+
+Certifique-se de ter os seguintes programas instalados:
+
+- **Node.js** (versão LTS recomendada)
+- **MySQL Server** e uma ferramenta de gerenciamento (como MySQL Workbench).
+- **Git** Clone o repositório para sua máquina local
+
+## 2. Configuração do Banco de Dados (MySQL)
+
+### A. Criar o Banco e Tabelas
+
+1. **Criar o Banco de Dados**: No MySQL Workbench, crie um novo esquema chamado `sistema_reservas`.
+2. **Executar o Schema**: Execute o script SQL contido no arquivo `backend/database/schema.sql` dentro do banco de dados `sistema_reservas`. Isso criará as 4 tabelas (USUARIOS, ESPACOS, RESERVAS, etc.) com todas as Chaves Estrangeiras.
+3. **Inserir Dados de Teste** (Opcional, mas Recomendado): Para popular a lista de espaços e tipos, execute os comandos `INSERT` que estão no final do arquivo `schema.sql` (ou em um script separado de dados de teste).
+
+### B. Configuração das Variáveis de Ambiente
+
+Crie um arquivo chamado `.env` dentro da pasta `/backend` e preencha com as credenciais do seu servidor MySQL:
+
+
+# Configurações do Banco de Dados MySQL
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=SUA_SENHA_DO_ROOT
+DB_NAME=sistema_reservas
+
+# Configurações do Servidor e Segurança
+PORT=3000
+SESSION_SECRET=SUA_CHAVE_SECRETA_ALEATORIA 
+
+---
+
+## 3. Instalação das Dependências
+
+Instale as dependências para as duas partes da aplicação:
+
+### 1. Backend (Express, MySQL, bcrypt)
+
+No diretório `backend`:
+
+    cd backend
+    npm install
+
+No diretório `fropntend`:
+
+    cd backend
+    npm install
+
+# 4. Execução do Projeto
+
+O projeto requer dois terminais separados para rodar o **Backend (API)** e o **Frontend (Interface)**.
+
+| Aplicação            | Terminal      | Comando      | Acesso                     |
+|----------------------|---------------|--------------|----------------------------|
+| **Backend (API)**    | Terminal 1    | `npm start`  | [http://localhost:3000](http://localhost:3000) |
+| **Frontend (Interface)** | Terminal 2    | `npm run dev` | [http://localhost:5173](http://localhost:5173) |
 
 ---
 
