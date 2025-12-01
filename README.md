@@ -100,7 +100,7 @@ No diretório `backend`:
     cd backend
     npm install
 
-No diretório `fropntend`:
+No diretório `frontend`:
 
     cd backend
     npm install
