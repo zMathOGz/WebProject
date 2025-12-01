@@ -54,13 +54,13 @@ Este projeto foi desenvolvido como parte da disciplina **Desenvolvimento Web**, 
 
 ## Estrutura de Pastas (Inicial)
 
+```
 sistema-reservas/
-│
-├── public/
-│   ├── css/
-│   │   └── style.css
-│   └── img/
-│
-├── views/
-│   └── index.html
+├── index.html 
+├── style.css 
+├── assets/ 
+│ ├── img/ 
+│ └── icons/
+└── README.md 
+```
 
